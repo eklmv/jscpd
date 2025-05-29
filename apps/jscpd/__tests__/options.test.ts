@@ -98,7 +98,7 @@ describe('jscpd options', () => {
 				'--formats-exts',
 				'c:ccc,cc1',
 			]);
-			expect(clones.length).toEqual(2);
+			expect(clones.length).toEqual(3);
 		});
 	});
 

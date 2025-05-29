@@ -13,7 +13,7 @@ export default class RedisStore implements IStore<IMapFrame> {
     this.redis.disconnect();
   }
 
-  get(key: string): Promise<IMapFrame> {
+  get(key: string): Promise<Record<string, IMapFrame>> {
     return this.redis.get(this.name + ':' + key).then(value => {
       if (!value) {
         throw new Error('not found')
@@ -26,8 +26,10 @@ export default class RedisStore implements IStore<IMapFrame> {
     this.name = name;
   }
 
-  async set(key: string, value: IMapFrame): Promise<IMapFrame> {
+  async set(key: string, value: IMapFrame): Promise<Record<string, IMapFrame>> {
+    const prev: Record<string,IMapFrame> = await this.redis.get(this.name + ':' + key).then(value => value ? JSON.parse(value) : {});
+    prev[value.sourceId] = value;
     await this.redis.set(this.name + ':' + key, JSON.stringify(value));
-    return value
+    return prev
   }
 }

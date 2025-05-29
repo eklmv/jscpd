@@ -9,7 +9,7 @@ export default class LevelDbStore implements IStore<IMapFrame> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private dbs: Record<string, any> = {};
 
-  get(key: string): Promise<IMapFrame> {
+  get(key: string): Promise<Record<string, IMapFrame>> {
     return this.dbs[this.name].get(key).then((value: string) => JSON.parse(value));
   }
 
@@ -23,8 +23,20 @@ export default class LevelDbStore implements IStore<IMapFrame> {
     }
   }
 
-  set(key: string, value: IMapFrame): Promise<IMapFrame> {
-    return this.dbs[this.name].put(key, JSON.stringify(value));
+  set(key: string, value: IMapFrame): Promise<Record<string, IMapFrame>> {
+    return this.get(key)
+      .then(
+        (prev) => {
+          prev[value.sourceId] = value;
+          return this.dbs[this.name].put(key, JSON.stringify(prev))
+        },
+        (reason) => {
+          if ('code' in reason && reason.code === 'LEVEL_NOT_FOUND')
+            return this.dbs[this.name].put(key, JSON.stringify({[value.sourceId]: value}))
+
+          throw reason;
+        }
+      );
   }
 
   close(): void {
