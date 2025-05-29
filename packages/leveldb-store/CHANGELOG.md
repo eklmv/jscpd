@@ -1,5 +1,11 @@
 ## 3.3.0-rc.3 (2020-05-04)
 
+## 5.0.2
+
+### Patch Changes
+
+- 012986b: Downgrade rimraf versions to support older node
+
 ## 5.0.0
 
 ### Major Changes
