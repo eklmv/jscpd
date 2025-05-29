@@ -27,16 +27,19 @@ importers:
 
   apps/jscpd:
     dependencies:
-      '@jscpd/core':
+      '@eklmv/jscpd-core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@jscpd/finder':
+      '@eklmv/jscpd-finder':
         specifier: workspace:*
         version: link:../../packages/finder
-      '@jscpd/html-reporter':
+      '@eklmv/jscpd-html-reporter':
         specifier: workspace:*
         version: link:../../packages/html-reporter
-      '@jscpd/tokenizer':
+      '@eklmv/jscpd-sarif-reporter':
+        specifier: workspace:*
+        version: link:../../packages/sarif-reporter
+      '@eklmv/jscpd-tokenizer':
         specifier: workspace:*
         version: link:../../packages/tokenizer
       colors:
@@ -51,9 +54,6 @@ importers:
       gitignore-to-glob:
         specifier: ^0.3.0
         version: 0.3.0
-      jscpd-sarif-reporter:
-        specifier: workspace:*
-        version: link:../../packages/sarif-reporter
     devDependencies:
       '@tsconfig/node20':
         specifier: ^20.1.4
@@ -92,13 +92,13 @@ importers:
         specifier: ^11.2.0
         version: 11.2.0
     devDependencies:
-      '@jscpd/core':
+      '@eklmv/jscpd-core':
         specifier: workspace:*
         version: link:../core
-      '@jscpd/finder':
+      '@eklmv/jscpd-finder':
         specifier: workspace:*
         version: link:../finder
-      '@jscpd/tsconfig':
+      '@eklmv/jscpd-tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@types/fs-extra':
@@ -123,7 +123,7 @@ importers:
         specifier: ^5.0.1
         version: 5.0.1
     devDependencies:
-      '@jscpd/tsconfig':
+      '@eklmv/jscpd-tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@types/node':
@@ -141,10 +141,10 @@ importers:
 
   packages/finder:
     dependencies:
-      '@jscpd/core':
+      '@eklmv/jscpd-core':
         specifier: workspace:*
         version: link:../core
-      '@jscpd/tokenizer':
+      '@eklmv/jscpd-tokenizer':
         specifier: workspace:*
         version: link:../tokenizer
       blamer:
@@ -172,7 +172,7 @@ importers:
         specifier: ^3.0.3
         version: 3.0.3
     devDependencies:
-      '@jscpd/tsconfig':
+      '@eklmv/jscpd-tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@types/bytes':
@@ -215,13 +215,13 @@ importers:
         specifier: ^3.0.3
         version: 3.0.3
     devDependencies:
-      '@jscpd/core':
+      '@eklmv/jscpd-core':
         specifier: workspace:*
         version: link:../core
-      '@jscpd/finder':
+      '@eklmv/jscpd-finder':
         specifier: workspace:*
         version: link:../finder
-      '@jscpd/tsconfig':
+      '@eklmv/jscpd-tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@types/fs-extra':
@@ -254,10 +254,10 @@ importers:
 
   packages/leveldb-store:
     dependencies:
-      '@jscpd/core':
+      '@eklmv/jscpd-core':
         specifier: workspace:*
         version: link:../core
-      '@jscpd/tokenizer':
+      '@eklmv/jscpd-tokenizer':
         specifier: workspace:*
         version: link:../tokenizer
       fs-extra:
@@ -270,7 +270,7 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1
     devDependencies:
-      '@jscpd/tsconfig':
+      '@eklmv/jscpd-tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@types/fs-extra':
@@ -294,10 +294,10 @@ importers:
 
   packages/redis-store:
     dependencies:
-      '@jscpd/core':
+      '@eklmv/jscpd-core':
         specifier: workspace:*
         version: link:../core
-      '@jscpd/tokenizer':
+      '@eklmv/jscpd-tokenizer':
         specifier: workspace:*
         version: link:../tokenizer
       '@types/node':
@@ -307,7 +307,7 @@ importers:
         specifier: ^5.4.1
         version: 5.4.1
     devDependencies:
-      '@jscpd/tsconfig':
+      '@eklmv/jscpd-tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@tsconfig/node20':
@@ -338,13 +338,13 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0
     devDependencies:
-      '@jscpd/core':
+      '@eklmv/jscpd-core':
         specifier: workspace:*
         version: link:../core
-      '@jscpd/finder':
+      '@eklmv/jscpd-finder':
         specifier: workspace:*
         version: link:../finder
-      '@jscpd/tsconfig':
+      '@eklmv/jscpd-tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@types/fs-extra':
@@ -368,7 +368,7 @@ importers:
 
   packages/tokenizer:
     dependencies:
-      '@jscpd/core':
+      '@eklmv/jscpd-core':
         specifier: workspace:*
         version: link:../core
       reprism:
@@ -378,7 +378,7 @@ importers:
         specifier: ^3.0.2
         version: 3.0.2
     devDependencies:
-      '@jscpd/tsconfig':
+      '@eklmv/jscpd-tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@types/node':

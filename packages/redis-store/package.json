@@ -1,5 +1,5 @@
 {
-  "name": "@jscpd/redis-store",
+  "name": "@eklmv/jscpd-redis-store",
   "version": "4.0.1",
   "description": "redis store for jscpd",
   "author": "Andrey Kucherenko <kucherenko.andrey@gmail.com>",
@@ -35,19 +35,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/kucherenko/jscpd.git"
+    "url": "git+ssh://git@github.com/eklmv/jscpd.git"
   },
   "bugs": {
     "url": "https://github.com/kucherenko/jscpd/issues"
   },
   "dependencies": {
-    "@jscpd/core": "workspace:*",
-    "@jscpd/tokenizer": "workspace:*",
+    "@eklmv/jscpd-core": "workspace:*",
+    "@eklmv/jscpd-tokenizer": "workspace:*",
     "@types/node": "^22.5.2",
     "ioredis": "^5.4.1"
   },
   "devDependencies": {
-    "@jscpd/tsconfig": "workspace:*",
+    "@eklmv/jscpd-tsconfig": "workspace:*",
     "@tsconfig/node20": "^20.1.4",
     "nodemon": "^3.1.4",
     "tsup": "^8.2.4",

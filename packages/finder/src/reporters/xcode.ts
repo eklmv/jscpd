@@ -1,4 +1,4 @@
-import {IClone, IOptions} from '@jscpd/core';
+import {IClone, IOptions} from '@eklmv/jscpd-core';
 import {IReporter} from '..';
 import {getPath} from '../utils/reports';
 

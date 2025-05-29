@@ -2,7 +2,7 @@
 import * as reprism from 'reprism';
 import {FORMATS} from './formats';
 import {createTokensMaps, TokensMap} from './token-map';
-import {IOptions, IToken} from '@jscpd/core';
+import {IOptions, IToken} from '@eklmv/jscpd-core';
 import {loadLanguages} from './grammar-loader';
 
 const ignore = {

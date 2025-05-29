@@ -31,12 +31,12 @@ The jscpd tool implements [Rabin-Karp](https://en.wikipedia.org/wiki/Rabin%E2%80
 | name                 | version  |  description  |
 |----------------------|----------|---------------|
 | [jscpd](apps/jscpd) | [![npm](https://img.shields.io/npm/v/jscpd.svg?style=flat-square)](https://www.npmjs.com/package/jscpd) | main package for jscpd (cli and API for detections included) |
-| [@jscpd/core](packages/core) | [![npm](https://img.shields.io/npm/v/@jscpd/core.svg?style=flat-square)](https://www.npmjs.com/package/@jscpd/core) |core detection algorithm, can be used for detect duplication in different environments, one dependency to eventemitter3 |
-| [@jscpd/finder](packages/finder) | [![npm](https://img.shields.io/npm/v/@jscpd/finder.svg?style=flat-square)](https://www.npmjs.com/package/@jscpd/finder) | detector of duplication in files  |
-| [@jscpd/tokenizer](packages/tokenizer) | [![npm](https://img.shields.io/npm/v/@jscpd/tokenizer.svg?style=flat-square)](https://www.npmjs.com/package/@jscpd/tokenizer) | tool for tokenize programming source code |
-| [@jscpd/leveldb-store](packages/leveldb-store) | [![npm](https://img.shields.io/npm/v/@jscpd/leveldb-store.svg?style=flat-square)](https://www.npmjs.com/package/@jscpd/leveldb-store) | LevelDB store, used for big repositories, slower than default store |
-| [@jscpd/html-reporter](packages/html-reporter) | [![npm](https://img.shields.io/npm/v/@jscpd/html-reporter.svg?style=flat-square)](https://www.npmjs.com/package/@jscpd/html-reporter) | Html reporter for jscpd |
-| [@jscpd/badge-reporter](packages/badge-reporter) | [![npm](https://img.shields.io/npm/v/@jscpd/badge-reporter.svg?style=flat-square)](https://www.npmjs.com/package/@jscpd/badge-reporter) | Badge reporter for jscpd |
+| [@eklmv/jscpd-core](packages/core) | [![npm](https://img.shields.io/npm/v/@eklmv/jscpd-core.svg?style=flat-square)](https://www.npmjs.com/package/@eklmv/jscpd-core) |core detection algorithm, can be used for detect duplication in different environments, one dependency to eventemitter3 |
+| [@eklmv/jscpd-finder](packages/finder) | [![npm](https://img.shields.io/npm/v/@eklmv/jscpd-finder.svg?style=flat-square)](https://www.npmjs.com/package/@eklmv/jscpd-finder) | detector of duplication in files  |
+| [@eklmv/jscpd-tokenizer](packages/tokenizer) | [![npm](https://img.shields.io/npm/v/@eklmv/jscpd-tokenizer.svg?style=flat-square)](https://www.npmjs.com/package/@eklmv/jscpd-tokenizer) | tool for tokenize programming source code |
+| [@eklmv/jscpd-leveldb-store](packages/leveldb-store) | [![npm](https://img.shields.io/npm/v/@eklmv/jscpd-leveldb-store.svg?style=flat-square)](https://www.npmjs.com/package/@eklmv/jscpd-leveldb-store) | LevelDB store, used for big repositories, slower than default store |
+| [@eklmv/jscpd-html-reporter](packages/html-reporter) | [![npm](https://img.shields.io/npm/v/@eklmv/jscpd-html-reporter.svg?style=flat-square)](https://www.npmjs.com/package/@eklmv/jscpd-html-reporter) | Html reporter for jscpd |
+| [@eklmv/jscpd-badge-reporter](packages/badge-reporter) | [![npm](https://img.shields.io/npm/v/@eklmv/jscpd-badge-reporter.svg?style=flat-square)](https://www.npmjs.com/package/@eklmv/jscpd-badge-reporter) | Badge reporter for jscpd |
 
 ## Installation
 ```bash
@@ -64,16 +64,16 @@ For integration copy/paste detection to your application you can use programming
 
 `jscpd` Promise API
 ```typescript
-import {IClone} from '@jscpd/core';
-import {jscpd} from 'jscpd';
+import {IClone} from '@eklmv/jscpd-core';
+import {jscpd} from '@eklmv/jscpd';
 
 const clones: Promise<IClone[]> = jscpd(process.argv);
 ```
 
 `jscpd` async/await API
 ```typescript
-import {IClone} from '@jscpd/core';
-import {jscpd} from 'jscpd';
+import {IClone} from '@eklmv/jscpd-core';
+import {jscpd} from '@eklmv/jscpd';
 (async () => {
   const clones: IClone[] = await jscpd(['', '', __dirname + '/../fixtures', '-m', 'weak', '--silent']);
   console.log(clones);
@@ -83,7 +83,7 @@ import {jscpd} from 'jscpd';
 
 `detectClones` API
 ```typescript
-import {detectClones} from "jscpd";
+import {detectClones} from "@eklmv/jscpd";
 
 (async () => {
   const clones = await detectClones({
@@ -98,8 +98,8 @@ import {detectClones} from "jscpd";
 
 `detectClones` with persist store
 ```typescript
-import {detectClones} from "jscpd";
-import {IMapFrame, MemoryStore} from "@jscpd/core";
+import {detectClones} from "@eklmv/jscpd";
+import {IMapFrame, MemoryStore} from "@eklmv/jscpd-core";
 
 (async () => {
   const store = new MemoryStore<IMapFrame>();
@@ -119,7 +119,7 @@ import {IMapFrame, MemoryStore} from "@jscpd/core";
 })()
 ```
 
-In case of deep customisation of detection process you can build your own tool with `@jscpd/core`, `@jscpd/finder` and `@jscpd/tokenizer`.
+In case of deep customisation of detection process you can build your own tool with `@eklmv/jscpd-core`, `@eklmv/jscpd-finder` and `@eklmv/jscpd-tokenizer`.
 
 ## Start contribution
 

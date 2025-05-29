@@ -1,6 +1,6 @@
 import {describe, it, expect, beforeEach, vi, afterEach} from "vitest";
 import {isAbsolute} from 'path';
-import {IClone} from '@jscpd/core';
+import {IClone} from '@eklmv/jscpd-core';
 import {jscpd, detectClones} from '../src';
 import {bold, yellow} from 'colors/safe';
 
@@ -224,7 +224,7 @@ describe('jscpd options', () => {
       expect(
         log
       ).toHaveBeenCalledWith(
-        yellow(`warning: badgezz not installed (install packages named @jscpd/badgezz-reporter or jscpd-badgezz-reporter)`),
+        yellow(`warning: badgezz not installed (install packages named @eklmv/jscpd-badgezz-reporter or jscpd-badgezz-reporter)`),
       );
     });
   });

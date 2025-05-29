@@ -1,5 +1,5 @@
 import Blamer from 'blamer';
-import {IBlamedLines, IClone} from '@jscpd/core';
+import {IBlamedLines, IClone} from '@eklmv/jscpd-core';
 import {IHook} from '..';
 
 

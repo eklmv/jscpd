@@ -1,25 +1,25 @@
-# `@jscpd/leveldb-store`
+# `@eklmv/jscpd-leveldb-store`
 
 > store for jscpd, used for large repositories
 
 ## Installation
 
 ```
-npm install @jscpd/leveldb-store --save
+npm install @eklmv/jscpd-leveldb-store --save
 ```
 
 ## Usage
 
 ```
-import {Tokenizer} from '@jscpd/tokenizer';
+import {Tokenizer} from '@eklmv/jscpd-tokenizer';
 import {
     Detector,
     IOptions,
     IClone,
     IStore,
     ITokenizer
-} from '@jscpd/core';
-import LeveldbStore from '@jscpd/leveldb-store';
+} from '@eklmv/jscpd-core';
+import LeveldbStore from '@eklmv/jscpd-leveldb-store';
 
 const options: IOptions = {
     minLines: 5,

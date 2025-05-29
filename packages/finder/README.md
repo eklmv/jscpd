@@ -1,25 +1,25 @@
-# `@jscpd/finder`
+# `@eklmv/jscpd-finder`
 
 > core package for detect duplicates, depends only on eventemitter3.
 
 ## Installation
 
 ```
-npm install @jscpd/finder --save
+npm install @eklmv/jscpd-finder --save
 ```
 
 ## Usage
 
 ```typescript
-import {Tokenizer} from '@jscpd/tokenizer';
+import {Tokenizer} from '@eklmv/jscpd-tokenizer';
 import {
     MemoryStore,
     IOptions,
     IClone,
     IStore,
     ITokenizer
-} from '@jscpd/core';
-import {EntryWithContent, getFilesToDetect, InFilesDetector} from '@jscpd/finder';
+} from '@eklmv/jscpd-core';
+import {EntryWithContent, getFilesToDetect, InFilesDetector} from '@eklmv/jscpd-finder';
 
 const options: IOptions = {
     minLines: 5,

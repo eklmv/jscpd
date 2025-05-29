@@ -1,5 +1,5 @@
 import {red} from 'colors/safe';
-import {IClone, IOptions, IStatistic} from '@jscpd/core';
+import {IClone, IOptions, IStatistic} from '@eklmv/jscpd-core';
 import {IReporter} from '..';
 
 export class ThresholdReporter implements IReporter {

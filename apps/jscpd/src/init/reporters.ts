@@ -9,11 +9,11 @@ import {
   ThresholdReporter,
   XcodeReporter,
   XmlReporter,
-} from '@jscpd/finder';
-import {IOptions} from '@jscpd/core';
+} from '@eklmv/jscpd-finder';
+import {IOptions} from '@eklmv/jscpd-core';
 import {grey, yellow} from 'colors/safe';
-import HtmlReporter from "@jscpd/html-reporter";
-import SarifReporter from "jscpd-sarif-reporter";
+import HtmlReporter from "@eklmv/jscpd-html-reporter";
+import SarifReporter from "@eklmv/jscpd-sarif-reporter";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const reporters: Record<string, any> = {
@@ -38,14 +38,14 @@ export function registerReporters(options: IOptions, detector: InFilesDetector):
       detector.registerReporter(new reporters[reporter](options));
     } else {
       try {
-        const reporterClass = require(`@jscpd/${reporter}-reporter`).default;
+        const reporterClass = require(`@eklmv/jscpd-${reporter}-reporter`).default;
         detector.registerReporter(new reporterClass(options));
       } catch (e) {
         try {
           const reporterClass = require(`jscpd-${reporter}-reporter`).default;
           detector.registerReporter(new reporterClass(options));
         } catch (e) {
-          console.log(yellow(`warning: ${reporter} not installed (install packages named @jscpd/${reporter}-reporter or jscpd-${reporter}-reporter)`))
+          console.log(yellow(`warning: ${reporter} not installed (install packages named @eklmv/jscpd-${reporter}-reporter or jscpd-${reporter}-reporter)`))
           console.log(grey((e as any).message));
         }
       }

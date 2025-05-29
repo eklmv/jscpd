@@ -1,6 +1,6 @@
 import {expect, describe, it} from 'vitest'
-import {Tokenizer} from "@jscpd/tokenizer";
-import {MemoryStore, Statistic} from "@jscpd/core";
+import {Tokenizer} from "@eklmv/jscpd-tokenizer";
+import {MemoryStore, Statistic} from "@eklmv/jscpd-core";
 import {InFilesDetector} from "../src";
 
 describe('jscpd finder: in-files-detector', () => {

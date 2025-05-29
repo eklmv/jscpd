@@ -1,5 +1,5 @@
-import {BlamerHook, FragmentsHook, InFilesDetector} from '@jscpd/finder';
-import {IOptions} from '@jscpd/core';
+import {BlamerHook, FragmentsHook, InFilesDetector} from '@eklmv/jscpd-finder';
+import {IOptions} from '@eklmv/jscpd-core';
 
 export function registerHooks(options: IOptions, detector: InFilesDetector): void {
   detector.registerHook(new FragmentsHook());

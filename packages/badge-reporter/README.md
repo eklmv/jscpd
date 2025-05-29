@@ -1,4 +1,4 @@
-# `@jscpd/badge-reporter`
+# `@eklmv/jscpd-badge-reporter`
 
 > The badge reporter for [jscpd](https://github.com/kucherenko/jscpd).
 
@@ -11,7 +11,7 @@ Generate badges like that:
 ### Install
 
 ```bash
-npm install @jscpd/badge-reporter
+npm install @eklmv/jscpd-badge-reporter
 ```
 
 ### Usage

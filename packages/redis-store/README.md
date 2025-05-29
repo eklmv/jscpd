@@ -1,4 +1,4 @@
-# `@jscpd/leveldb-store`
+# `@eklmv/jscpd-leveldb-store`
 
 **!NOT implemented yet**
 
@@ -7,21 +7,21 @@
 ## Installation
 
 ```
-npm install @jscpd/redis-store --save
+npm install @eklmv/jscpd-redis-store --save
 ```
 
 ## Usage
 
 ```
-import {Tokenizer} from '@jscpd/tokenizer';
+import {Tokenizer} from '@eklmv/jscpd-tokenizer';
 import {
     Detector,
     IOptions,
     IClone,
     IStore,
     ITokenizer
-} from '@jscpd/core';
-import RedisdbStore from '@jscpd/redis-store';
+} from '@eklmv/jscpd-core';
+import RedisdbStore from '@eklmv/jscpd-redis-store';
 
 const options: IOptions = {
     minLines: 5,

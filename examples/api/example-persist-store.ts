@@ -1,5 +1,5 @@
 import {detectClones} from "../../apps/jscpd";
-import {IMapFrame, MemoryStore} from "@jscpd/core";
+import {IMapFrame, MemoryStore} from "@eklmv/jscpd-core";
 
 (async () => {
   const store = new MemoryStore<IMapFrame>();

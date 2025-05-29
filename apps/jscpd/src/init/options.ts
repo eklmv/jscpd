@@ -1,6 +1,6 @@
 import {Command} from 'commander';
-import {getModeHandler, IOptions} from '@jscpd/core';
-import {getSupportedFormats} from '@jscpd/tokenizer';
+import {getModeHandler, IOptions} from '@eklmv/jscpd-core';
+import {getSupportedFormats} from '@eklmv/jscpd-tokenizer';
 import {initIgnore} from './ignore';
 import {prepareOptions} from '../options';
 
