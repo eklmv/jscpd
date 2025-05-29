@@ -1,5 +1,16 @@
 ## 4.0.0
 
+## 4.0.6
+
+### Patch Changes
+
+- Updated dependencies [8afb3fc]
+  - @eklmv/jscpd-core@5.0.0
+  - @eklmv/jscpd-finder@4.0.2
+  - @eklmv/jscpd-html-reporter@4.0.1
+  - @eklmv/jscpd-sarif-reporter@4.0.3
+  - @eklmv/jscpd-tokenizer@4.0.2
+
 ## 4.0.4
 
 ### Patch Changes

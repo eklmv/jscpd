@@ -1,5 +1,17 @@
 ## 3.3.0-rc.3 (2020-05-04)
 
+## 5.0.0
+
+### Major Changes
+
+- 8afb3fc: Allow jscpd to track source of duplicates while detecting clones
+
+### Patch Changes
+
+- Updated dependencies [8afb3fc]
+  - @eklmv/jscpd-core@5.0.0
+  - @eklmv/jscpd-tokenizer@4.0.2
+
 ## 4.0.1
 
 ### Patch Changes
