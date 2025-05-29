@@ -26,7 +26,7 @@ describe('jscpd formats', () => {
 			},
 			{
 				name: 'cpp',
-				clonesCount: 2,
+				clonesCount: 3,
 				folder: pathToFixtures + '/clike',
 			},
 			{
@@ -36,7 +36,7 @@ describe('jscpd formats', () => {
 			},
 			{
 				name: 'cpp-header',
-				clonesCount: 2,
+				clonesCount: 3,
 				folder: pathToFixtures + '/clike',
 			},
 			{
@@ -46,7 +46,7 @@ describe('jscpd formats', () => {
 			},
 			{
 				name: 'cpp',
-				clonesCount: 2,
+				clonesCount: 3,
 				folder: pathToFixtures + '/clike',
 			},
 			{
@@ -74,12 +74,12 @@ describe('jscpd formats', () => {
 		'Scripts': [
 			{
 				name: 'javascript',
-				clonesCount: 9,
+				clonesCount: 29,
 				folder: pathToFixtures + '/javascript',
 			},
 			{
 				name: 'typescript',
-				clonesCount: 6,
+				clonesCount: 24,
 				folder: pathToFixtures + '/javascript',
 			},
 			{
@@ -121,12 +121,12 @@ describe('jscpd formats', () => {
 			{
 				name: 'markup',
 				descr: 'XML',
-				clonesCount: 3,
+				clonesCount: 4,
 				folder: pathToFixtures + '/xml',
 			},
 			{
 				name: 'twig',
-				clonesCount: 2,
+				clonesCount: 3,
 				folder: pathToFixtures + '/twig',
 			},
 			{
@@ -153,7 +153,7 @@ describe('jscpd formats', () => {
 		'CSS': [
 			{
 				name: 'css',
-				clonesCount: 2,
+				clonesCount: 3,
 				folder: pathToFixtures + '/css',
 			},
 			{
@@ -170,7 +170,7 @@ describe('jscpd formats', () => {
 		'Common': [
 			{
 				name: 'brainfuck',
-				clonesCount: 4,
+				clonesCount: 9,
 				folder: pathToFixtures + '/brainfuck',
 			},
 			{
@@ -180,7 +180,7 @@ describe('jscpd formats', () => {
 			},
 			{
 				name: 'rust',
-				clonesCount: 6,
+				clonesCount: 10,
 				folder: pathToFixtures + '/rust',
 			},
 			{
@@ -210,7 +210,7 @@ describe('jscpd formats', () => {
 			},
 			{
 				name: 'haxe',
-				clonesCount: 3,
+				clonesCount: 4,
 				folder: pathToFixtures + '/haxe',
 			},
 			{
