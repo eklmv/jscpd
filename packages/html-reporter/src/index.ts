@@ -1,6 +1,6 @@
 import {join} from 'path';
-import type {IClone, IOptions, IStatistic} from '@jscpd/core';
-import {IReporter, JsonReporter} from "@jscpd/finder";
+import type {IClone, IOptions, IStatistic} from '@eklmv/jscpd-core';
+import {IReporter, JsonReporter} from "@eklmv/jscpd-finder";
 import {copySync, writeFileSync} from "fs-extra";
 import {green, red} from "colors/safe";
 import * as pug from "pug";

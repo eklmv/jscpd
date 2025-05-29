@@ -1,17 +1,17 @@
-# `@jscpd/core`
+# `@eklmv/jscpd-core`
 
 > core package for detect duplicates, depends only on eventemitter3.
 
 ## Installation
 
 ```
-npm install @jscpd/core --save
+npm install @eklmv/jscpd-core --save
 ```
 
 ## Usage
 
 ```typescript
-import {Tokenizer} from '@jscpd/tokenizer';
+import {Tokenizer} from '@eklmv/jscpd-tokenizer';
 import {
     Detector,
     MemoryStore,
@@ -19,7 +19,7 @@ import {
     IClone,
     IStore,
     ITokenizer
-} from '@jscpd/core';
+} from '@eklmv/jscpd-core';
 
 const options: IOptions = {
     minLines: 5,

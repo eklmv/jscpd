@@ -1,4 +1,4 @@
-import {IOptions, ITokenizer, ITokensMap} from '@jscpd/core';
+import {IOptions, ITokenizer, ITokensMap} from '@eklmv/jscpd-core';
 import {createTokenMapBasedOnCode} from './tokenize';
 
 export * from './interfaces';

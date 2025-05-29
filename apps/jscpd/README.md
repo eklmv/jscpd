@@ -154,7 +154,7 @@ Available reporters:
  - **sarif** - generate a report in SARIF format (https://github.com/oasis-tcs/sarif-spec), save it to `jscpd-sarif.json` file;
  - **verbose** - output a lot of debug information to console;
 
-> Note: A reporter can be developed manually, see [@jscpd/finder](../finder) package.
+> Note: A reporter can be developed manually, see [@eklmv/jscpd-finder](../finder) package.
 
  - Cli options: `--reporters`, `-r`
  - Type: **string**
@@ -262,9 +262,9 @@ $ jscpd --formats-exts javascript:es,es6;dart:dt /path/to/code
 Stores used for collect information about code, by default all information collect in memory.
 
 Available stores:
- - **leveldb** - leveldb store all data to files. The store recommended as store for big repositories. Should install @jscpd/leveldb-store before;
+ - **leveldb** - leveldb store all data to files. The store recommended as store for big repositories. Should install @eklmv/jscpd-leveldb-store before;
 
-> Note: A store can be developed manually, see [@jscpd/finder](../finder) package and [@jscpd/leveldb-store](../leveldb-store) as example.
+> Note: A store can be developed manually, see [@eklmv/jscpd-finder](../finder) package and [@eklmv/jscpd-leveldb-store](../leveldb-store) as example.
 
  - Cli options: `--store`
  - Type: **string**
@@ -300,7 +300,7 @@ Also you can use section in `package.json`:
 ```json
 {
   ...
-  "jscpd": {
+  "@eklmv/jscpd": {
     "threshold": 0.1,
     "reporters": ["html", "console", "badge"],
     "ignore": ["**/__snapshots__/**"],
@@ -462,16 +462,16 @@ For integration copy/paste detection to your application you can use programming
 
 `jscpd` Promise API
 ```typescript
-import {IClone} from '@jscpd/core';
-import {jscpd} from 'jscpd';
+import {IClone} from '@eklmv/jscpd-core';
+import {jscpd} from '@eklmv/jscpd';
 
 const clones: Promise<IClone[]> = jscpd(process.argv);
 ```
 
 `jscpd` async/await API
 ```typescript
-import {IClone} from '@jscpd/core';
-import {jscpd} from 'jscpd';
+import {IClone} from '@eklmv/jscpd-core';
+import {jscpd} from '@eklmv/jscpd';
 (async () => {
   const clones: IClone[] = await jscpd(['', '', __dirname + '/../fixtures', '-m', 'weak', '--silent']);
   console.log(clones);
@@ -481,7 +481,7 @@ import {jscpd} from 'jscpd';
 
 `detectClones` API
 ```typescript
-import {detectClones} from "jscpd";
+import {detectClones} from "@eklmv/jscpd";
 
 (async () => {
   const clones = await detectClones({
@@ -496,8 +496,8 @@ import {detectClones} from "jscpd";
 
 `detectClones` with persist store
 ```typescript
-import {detectClones} from "jscpd";
-import {IMapFrame, MemoryStore} from "@jscpd/core";
+import {detectClones} from "@eklmv/jscpd";
+import {IMapFrame, MemoryStore} from "@eklmv/jscpd-core";
 
 (async () => {
   const store = new MemoryStore<IMapFrame>();
@@ -518,7 +518,7 @@ import {IMapFrame, MemoryStore} from "@jscpd/core";
 ```
 
 In case of deep customisation of detection process you can build your own tool:
-If you are going to detect clones in file system you can use [@jscpd/finder](../finder) for make a powerful detector.
+If you are going to detect clones in file system you can use [@eklmv/jscpd-finder](../finder) for make a powerful detector.
 In case of detect clones in browser or not node.js environment you can build your own solution base on [@jscpd/code](../core)
 
 ## Changelog

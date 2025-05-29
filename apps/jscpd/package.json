@@ -1,5 +1,5 @@
 {
-  "name": "jscpd",
+  "name": "@eklmv/jscpd",
   "version": "4.0.5",
   "description": "detector of copy/paste in files",
   "author": "Andrey Kucherenko <kucherenko.andrey@gmail.com>",
@@ -32,7 +32,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/kucherenko/jscpd.git"
+    "url": "git+ssh://git@github.com/eklmv/jscpd.git"
   },
   "scripts": {
     "build": "tsup-node --dts",
@@ -42,11 +42,11 @@
     "cleanup": "rimraf ./dist .turbo"
   },
   "dependencies": {
-    "@jscpd/core": "workspace:*",
-    "@jscpd/finder": "workspace:*",
-    "@jscpd/html-reporter": "workspace:*",
-    "jscpd-sarif-reporter": "workspace:*",
-    "@jscpd/tokenizer": "workspace:*",
+    "@eklmv/jscpd-core": "workspace:*",
+    "@eklmv/jscpd-finder": "workspace:*",
+    "@eklmv/jscpd-html-reporter": "workspace:*",
+    "@eklmv/jscpd-sarif-reporter": "workspace:*",
+    "@eklmv/jscpd-tokenizer": "workspace:*",
     "colors": "^1.4.0",
     "commander": "^5.0.0",
     "fs-extra": "^11.2.0",

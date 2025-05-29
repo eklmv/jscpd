@@ -1,4 +1,4 @@
-import {IClone} from '@jscpd/core';
+import {IClone} from '@eklmv/jscpd-core';
 import {readFileSync} from "fs";
 import {IHook} from '..';
 

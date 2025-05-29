@@ -1,4 +1,4 @@
-import {getOption, IClone, IOptions, IStatistic} from "@jscpd/core";
+import {getOption, IClone, IOptions, IStatistic} from "@eklmv/jscpd-core";
 import {ensureDirSync, writeFileSync} from "fs-extra";
 import {green} from "colors/safe";
 import {join} from "path";

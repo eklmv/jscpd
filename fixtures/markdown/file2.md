@@ -96,7 +96,7 @@ or
 
 ```coffeescript
 # coffeescript
-jscpd = require('jscpd')
+jscpd = require('@eklmv/jscpd')
 result = jscpd::run
   path: 'my/project/folder'
   files: '**/*.js'

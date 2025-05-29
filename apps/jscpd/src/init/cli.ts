@@ -1,5 +1,5 @@
 import {Command} from 'commander';
-import {getOption} from '@jscpd/core';
+import {getOption} from '@eklmv/jscpd-core';
 
 export function initCli(packageJson: any, argv: string[]): Command {
 	const cli = new Command(packageJson.name);

@@ -1,4 +1,4 @@
-# `@jscpd/tokenizer`
+# `@eklmv/jscpd-tokenizer`
 
 > tokenizer is package from @jscpd used for convert programming code to list of tokens
 
@@ -6,14 +6,14 @@
 ## Installation
 
 ```
-npm install @jscpd/tokenizer --save
+npm install @eklmv/jscpd-tokenizer --save
 ```
 
 ## Usage
 
 ```
-import {IOptions,  ITokensMap} from '@jscpd/core';
-import {Tokenizer} from '@jscpd/tokenizer';
+import {IOptions,  ITokensMap} from '@eklmv/jscpd-core';
+import {Tokenizer} from '@eklmv/jscpd-tokenizer';
 
 const tokenizer = new Tokenizer();
 const options: IOptions = {};

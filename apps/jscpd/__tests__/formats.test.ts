@@ -1,6 +1,6 @@
 import {describe, expect, vi, afterEach, it, beforeEach} from 'vitest'
 import {jscpd} from '../src';
-import {IClone} from '@jscpd/core';
+import {IClone} from '@eklmv/jscpd-core';
 
 const pathToFixtures = __dirname + '/../../../fixtures';
 

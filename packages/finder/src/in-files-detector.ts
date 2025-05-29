@@ -10,8 +10,8 @@ import {
   ISubscriber,
   ITokenizer,
   Statistic,
-} from '@jscpd/core';
-import {getFormatByFile} from '@jscpd/tokenizer';
+} from '@eklmv/jscpd-core';
+import {getFormatByFile} from '@eklmv/jscpd-tokenizer';
 import {EntryWithContent, IHook, IReporter} from './interfaces';
 import {SkipLocalValidator} from './validators';
 
