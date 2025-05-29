@@ -1,16 +1,16 @@
-import {IStore} from '..';
+import {IStore, type IMapFrame} from '..';
 
-export class MemoryStore<IMapFrame> implements IStore<IMapFrame> {
+export class MemoryStore implements IStore<IMapFrame> {
   private _namespace: string = '';
 
-  protected values: Record<string, Record<string, IMapFrame>> = {};
+  protected values: Record<string, Record<string, Record<string, IMapFrame>>> = {};
 
   public namespace(namespace: string): void {
     this._namespace = namespace;
     this.values[namespace] = this.values[namespace] || {};
   }
 
-  public get(key: string): Promise<IMapFrame> {
+  public get(key: string): Promise<Record<string, IMapFrame>> {
     return new Promise((resolve, reject) => {
       // @ts-ignore
       if (key in this.values[this._namespace]) {
@@ -22,10 +22,13 @@ export class MemoryStore<IMapFrame> implements IStore<IMapFrame> {
     });
   }
 
-  public set(key: string, value: IMapFrame): Promise<IMapFrame> {
+  public set(key: string, value: IMapFrame): Promise<Record<string, IMapFrame>> {
     // @ts-ignore
-    this.values[this._namespace][key] = value;
-    return Promise.resolve(value);
+    const prev = this.values[this._namespace][key] || {};
+    prev[value.sourceId] = value
+    // @ts-ignore
+    this.values[this._namespace][key] = prev;
+    return Promise.resolve(prev);
   }
 
   close(): void {

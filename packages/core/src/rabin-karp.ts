@@ -12,49 +12,54 @@ export class RabinKarp {
   }
 
   public async run(tokenMap: ITokensMap, store: IStore<IMapFrame>): Promise<IClone[]> {
-    return new Promise((resolve => {
-      let mapFrameInStore: any;
-      let clone: IClone | null = null;
+    // tracking clones during detection, sourceId -> clone
+    let trackedClones: Record<string, IClone> = {};
+    // resulting clones
+    const clones: IClone[] = [];
 
-      const clones: IClone[] = [];
+    const loop = async () => {
+      const iteration = tokenMap.next();
 
-      // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-      const loop = () => {
-        const iteration = tokenMap.next();
+      try {
+        const mapFrames: Record<string, IMapFrame> = await store.get(iteration.value.id);
 
-				store
-					.get(iteration.value.id)
-					.then(
-						(mapFrameFromStore: IMapFrame) => {
-							mapFrameInStore = mapFrameFromStore;
-							if (!clone) {
-                clone = RabinKarp.createClone(tokenMap.getFormat(), iteration.value, mapFrameInStore);
-              }
-						},
-						() => {
-							if (clone && this.validate(clone)) {
-								clones.push(clone);
-							}
-							clone = null;
-							if (iteration.value.id) {
-								return store.set(iteration.value.id, iteration.value);
-							}
-						},
-          )
-          .finally(() => {
-            if (!iteration.done) {
-              if (clone) {
-                // @ts-ignore
-                clone = RabinKarp.enlargeClone(clone, iteration.value, mapFrameInStore);
-              }
-              loop();
-            } else {
-              resolve(clones);
+        for (const [sourceId, mapFrame] of Object.entries(mapFrames)) {
+          if (!trackedClones[sourceId]) {
+            trackedClones[sourceId] = RabinKarp.createClone(tokenMap.getFormat(), iteration.value, mapFrame);
+          } else {
+            trackedClones[sourceId] = RabinKarp.enlargeClone(trackedClones[sourceId], iteration.value, mapFrame);
+          }
+        }
+
+        // if sourceId of tracked clone is not in store, then clone is finished
+        for (const [sourceId, clone] of Object.entries(trackedClones)) {
+          if (!mapFrames[sourceId]) {
+            if (this.validate(clone)) {
+              clones.push(clone);
             }
-          });
+            delete trackedClones[sourceId];
+          }
+        }
+      } catch {
+        for (const clone of Object.values(trackedClones)) {
+          if (this.validate(clone)) clones.push(clone);
+        }
+
+        trackedClones = {};
+      } finally {
+        // Now we track frames from all sources, so add them all to store
+        if (iteration.value.id) {
+          await store.set(iteration.value.id, iteration.value);
+        }
+
+        if (!iteration.done) {
+          await loop();
+        }
       }
-      loop();
-    }));
+    };
+
+    await loop();
+    return clones;
   }
 
   private validate(clone: IClone): boolean {
