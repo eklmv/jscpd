@@ -6,5 +6,5 @@ export interface IStore<TValue> {
 
 	set(key: string, value: TValue): Promise<TValue>;
 
-	close(): void;
+	close(): Promise<void>;
 }

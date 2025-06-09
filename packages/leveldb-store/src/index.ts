@@ -27,16 +27,14 @@ export default class LevelDbStore implements IStore<IMapFrame> {
     return this.dbs[this.name].put(key, JSON.stringify(value));
   }
 
-  close(): void {
-    Object.entries(this.dbs).forEach(([name, db]) => {
-      db.close(() => {
-        try {
-          sync('.jscpd/' + name)
-        } catch (e) {
-          console.log(e);
-        }
-      });
+  close(): Promise<void> {
+    return Promise.allSettled(
+      Object.entries(this.dbs).map(([_, db]) => db.close())
+    ).then((results) => {
+      for (const result of results) {
+        if (result.status === 'rejected') console.log(result.reason);
+      }
+      sync('.jscpd');
     });
-    sync('.jscpd');
   }
 }
