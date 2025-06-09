@@ -1,5 +1,12 @@
 ## 3.3.0-rc.3 (2020-05-04)
 
+## 4.0.3
+
+### Patch Changes
+
+- Updated dependencies [032e34e]
+  - @eklmv/jscpd-core@5.0.1
+
 ## 4.0.2
 
 ### Patch Changes
