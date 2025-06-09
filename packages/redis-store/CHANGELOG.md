@@ -1,5 +1,14 @@
 ## 3.3.0-rc.3 (2020-05-04)
 
+## 5.0.1
+
+### Patch Changes
+
+- 032e34e: store.close now async, to be able to wait for level to close all databases
+- Updated dependencies [032e34e]
+  - @eklmv/jscpd-core@5.0.1
+  - @eklmv/jscpd-tokenizer@4.0.3
+
 ## 5.0.0
 
 ### Major Changes
