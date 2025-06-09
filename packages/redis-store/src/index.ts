@@ -9,8 +9,9 @@ export default class RedisStore implements IStore<IMapFrame> {
     this.redis = new Redis();
   }
 
-  close(): void {
+  close(): Promise<void> {
     this.redis.disconnect();
+    return Promise.resolve();
   }
 
   get(key: string): Promise<Record<string, IMapFrame>> {

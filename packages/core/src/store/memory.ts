@@ -31,7 +31,8 @@ export class MemoryStore implements IStore<IMapFrame> {
     return Promise.resolve(prev);
   }
 
-  close(): void {
+  close(): Promise<void> {
     this.values = {};
+    return Promise.resolve();
   }
 }
